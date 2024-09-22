@@ -147,7 +147,6 @@ int calcFitness(Keyboard *k)
     k->fitness += k->distance + k->fingerWork + k->inRoll + k->outRoll +
         k->sameHand + k->sameFinger + k->rowChange + k->homeJump +
         k->ringJump + k->toCenter + k->toOutside;
-	if (keepZXCV) k->fitness += calcShortcuts(k);
 	if (keepQWERTY) k->fitness += calcQWERTY(k);
 	if (keepBrackets) k->fitness += calcBrackets(k);
 	if (keepNumbersShifted) k->fitness += calcNumbersShifted(k);
@@ -196,18 +195,6 @@ inline int scoreDigraph(Keyboard *k, char digraph[], int64_t multiplier,
 
 	return 0;
 #endif
-}
-
-inline int64_t calcShortcuts(Keyboard *k)
-{
-	int64_t result;
-	result =
-	      shortcutCosts[locIgnoreShifted(k, 'z')] * (int64_t) zCost
-		+ shortcutCosts[locIgnoreShifted(k, 'x')] * (int64_t) xCost
-		+ shortcutCosts[locIgnoreShifted(k, 'c')] * (int64_t) cCost
-		+ shortcutCosts[locIgnoreShifted(k, 'v')] * (int64_t) vCost;
-
-	return result * (totalMon / monLen);
 }
 
 inline int64_t calcQWERTY(Keyboard *k)

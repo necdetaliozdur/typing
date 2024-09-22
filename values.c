@@ -69,13 +69,6 @@ int initValues()
 	}
 
 	// Based on distance from the ctrl key and how much of a stretch it is.
-	shortcutCosts[ 0] =  0; shortcutCosts[ 1] =  0; shortcutCosts[ 2] =  1; shortcutCosts[ 3] =  3; shortcutCosts[ 4] =  4;
-	shortcutCosts[ 5] =  8; shortcutCosts[ 6] = 10; shortcutCosts[ 7] = 10; shortcutCosts[ 8] = 10; shortcutCosts[ 9] = 10;
-	shortcutCosts[10] =  0; shortcutCosts[11] =  0; shortcutCosts[12] =  2; shortcutCosts[13] =  3; shortcutCosts[14] =  5;
-	shortcutCosts[15] =  8; shortcutCosts[16] = 10; shortcutCosts[17] = 10; shortcutCosts[18] = 10; shortcutCosts[19] = 10;
-	shortcutCosts[20] =  0; shortcutCosts[21] =  0; shortcutCosts[22] =  0; shortcutCosts[23] =  2; shortcutCosts[24] =  4;
-	shortcutCosts[25] =  8; shortcutCosts[26] = 10; shortcutCosts[27] = 10; shortcutCosts[28] = 10; shortcutCosts[29] = 10;
-
 	return 0;
 }
 
@@ -86,7 +79,6 @@ void initCosts()
     /* If you do not wish to use multithreading, set numThreads to 1. */
 	numThreads = 1;
 
-	keepZXCV = FALSE;
 	keepQWERTY = FALSE;
 	keepNumbers = 1;
 	keepBrackets = TRUE;
@@ -95,10 +87,6 @@ void initCosts()
 	keepConsonantsRight = FALSE;
 	keepNumbersShifted = FALSE;
 
-	zCost = 10;
-	xCost =  6;
-	cCost = 12;
-	vCost = 14;
 	qwertyPosCost = 14;
 	qwertyFingerCost = 4;
 	qwertyHandCost = 20;
@@ -118,7 +106,6 @@ void initCosts()
 		fingerPercentMaxes[3] = fingerPercentMaxes[FINGER_COUNT - 4] = 22.0;
 		fingerPercentMaxes[4] = fingerPercentMaxes[FINGER_COUNT - 5] = 18.0;
 	}
-
 
 	fingerWorkCosts[0] = fingerWorkCosts[FINGER_COUNT - 1] = 40;
 	fingerWorkCosts[1] = fingerWorkCosts[FINGER_COUNT - 2] = 30;
@@ -149,7 +136,6 @@ void initCosts()
 	ringJump =       40;
 	toCenter =		 30;
 	toOutside =		 30;
-
 	shiftCost =		100;
 	doubleShiftCost=150;
 }

@@ -75,7 +75,6 @@ char *kbdFilename;
 #define GTBBF_ROUNDS 8                  /* recommended 4-10 */
 
 int64_t distanceCosts[KSIZE_MAX];
-int64_t shortcutCosts[KSIZE_MAX];
 
 double fingerPercentMaxes[FINGER_COUNT];
 int64_t fingerWorkCosts[FINGER_COUNT];
@@ -90,10 +89,10 @@ int detailedOutput, numThreads;
  * The Former: keepNumbers, keepShiftPairs, keepTab
  * The Latter: keepZXCV, keepBrackets, keepNumbersShifted
  */
-int keepZXCV, keepQWERTY, keepNumbers, keepBrackets, keepShiftPairs,
+int keepQWERTY, keepNumbers, keepBrackets, keepShiftPairs,
 	keepTab, keepConsonantsRight,
 	keepNumbersShifted /* for bogboar */;
-int zCost, xCost, cCost, vCost, qwertyPosCost, qwertyFingerCost, qwertyHandCost,
+int qwertyPosCost, qwertyFingerCost, qwertyHandCost,
 	bracketsCost, numbersShiftedCost;
 
 int distance, inRoll, outRoll, sameHand, sameFingerP, sameFingerR, sameFingerM,
