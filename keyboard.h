@@ -9,14 +9,14 @@
 
 #ifndef __KEYBOARD_H__
 #define __KEYBOARD_H__
- 
+
 #include <stdlib.h>
 #include <limits.h>
 #include <math.h>
 #include "tools.h"
 
 /* Takes a Keyboard pointer k and an integer index.
- * 
+ *
  * WARNING: Both k and index are evaluated multiple times.
  */
 #define charAt(k, index) ((index) < ksize ? (k)->layout[index] : (k)->shiftedLayout[index - ksize])
@@ -45,7 +45,7 @@ void shuffleLayout(Keyboard *kbd);
 /* Returns the index of c on either the shifted or unshifted layout. */
 int locIgnoreShifted(Keyboard *k, char c);
 
-/* Returns the index of c if c is on the unshifted layout, or index + ksize 
+/* Returns the index of c if c is on the unshifted layout, or index + ksize
  * if c is on the shifted layout.
  */
 int locWithShifted(Keyboard *k, char c);

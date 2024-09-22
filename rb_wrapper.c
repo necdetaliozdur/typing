@@ -1,4 +1,4 @@
-/* 
+/*
  *  A Ruby object wrapper, allowing this module's functions to be called from Ruby.
  */
 

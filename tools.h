@@ -8,14 +8,14 @@
 
 #ifndef __TOOLS_H__
 #define __TOOLS_H__
- 
+
 #include "values.h"
 
 #define streq(str1, str2) (strcmp(str1, str2) == 0)
 #define streqn(str1, str2, n) (strncmp(str1, str2, n) == 0)
 
 #define ASCII_SHIFT 14
- 
+
 #define DI_LEN_MAX 5000
 #define MON_LEN_MAX 200
 
@@ -76,7 +76,7 @@ struct Digraph digraphs[DI_LEN_MAX];
 char keysToInclude[200];
 
 typedef struct {
-	char layout[KSIZE_MAX + 1]; /* The one extra character is set to '\0' so 
+	char layout[KSIZE_MAX + 1]; /* The one extra character is set to '\0' so
 								(layout) can be treated as a string. */
 	char shiftedLayout[KSIZE_MAX + 1];
 	int64_t fingerUsage[FINGER_COUNT];
@@ -103,7 +103,7 @@ void printTime(time_t start);
 int initData();
 void initKeyboardData();
 int initTypingData();
-int compileTypingData(char *outfileName, const char *filenames[], 
+int compileTypingData(char *outfileName, const char *filenames[],
 		int multipliers[], int length, int unit, int max);
 int sortTypingData(char **keys, int *values, int left, int right);
 int convertEscapeChar(int c);
@@ -138,12 +138,12 @@ int keepShiftPair(char c);
 
 char qwerty[30];
 
-/* For each key, indicates which hand (LEFT or RIGHT) is responsible for typing 
+/* For each key, indicates which hand (LEFT or RIGHT) is responsible for typing
  * that key.
  */
 int hand[KSIZE_MAX];
 
-/* For each key, indicates which finger (PINKY, RING, MIDDLE or INDEX) is 
+/* For each key, indicates which finger (PINKY, RING, MIDDLE or INDEX) is
  * responsible for typing that key.
  */
 int finger[KSIZE_MAX];
@@ -153,7 +153,7 @@ int finger[KSIZE_MAX];
  */
 int column[KSIZE_MAX];
 
-/* For each key, indicates which row that key lies on. The top row is 0, 
+/* For each key, indicates which row that key lies on. The top row is 0,
  * the row below it is 1, the row below that is 2, etc.
  */
 int row[KSIZE_MAX];
@@ -162,7 +162,7 @@ int row[KSIZE_MAX];
  */
 int homeRow;
 
-/* Indicates the index of the first number in the layout, assuming 
+/* Indicates the index of the first number in the layout, assuming
  * keepNumbers is TRUE.
  */
 int firstNumberIndex;
@@ -175,13 +175,13 @@ int isCenter[KSIZE_MAX];
  */
 int isOutside[KSIZE_MAX];
 
-/* For each key, indicates whether that key requires a reach to the center OR 
- * a reach to the outside. This one is produced automatically from isCenter[] 
+/* For each key, indicates whether that key requires a reach to the center OR
+ * a reach to the outside. This one is produced automatically from isCenter[]
  * and isOutside[].
  */
 int isCenterOrOutside[KSIZE_MAX];
 
-/* For each key, indicates whether that key should be printed. Any place-holder 
+/* For each key, indicates whether that key should be printed. Any place-holder
  * key that does not actually exist on the keyboard should not be printed.
  */
 int printable[KSIZE_MAX];

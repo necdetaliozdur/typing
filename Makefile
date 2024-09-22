@@ -1,8 +1,8 @@
-# 
+#
 # Makefile for Typing.
-# 
+#
 # This version was created on 3/16/13.
-# 
+#
 
 # Set default C compiler to gcc.
 CC = gcc
@@ -47,5 +47,5 @@ release: CFLAGS += $(RELEASE_FLAGS)
 optimizer: accessories.o cjalgorithm.o fitness.o keyboard.o tools.o values.o
 unit: accessories.o cjalgorithm.o fitness.o keyboard.o tools.o values.o
 
-clean: 
+clean:
 	rm -f $(programs) *.o callgrind.out.*

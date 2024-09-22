@@ -25,7 +25,7 @@ The program itself provides documentation for the various options.
 USING THE FULL KEYBOARD
 -----------------------
 
-The default setting is to evaluate the main 30 keys on the keyboard (this is how the program was originally written). You can also use it to evaluate the entire keyboard by changing it at runtime or by changing this line near the beginning of `initValues()` in values.c: 
+The default setting is to evaluate the main 30 keys on the keyboard (this is how the program was originally written). You can also use it to evaluate the entire keyboard by changing it at runtime or by changing this line near the beginning of `initValues()` in values.c:
 
     fullKeyboard = <K_SETTING>;
 
@@ -33,7 +33,7 @@ To use the main 30 keys write `K_NO`, for the full keyboard use `K_STANDARD`, an
 
 For the more casual keyboard optimizer I recommended just optimizing the main 30 keys, as the other keys don't have a very large effect and the rarer keys are much more difficult to re-learn. But if you want maximum optimization, this is the option for you. This option can use a standard keyboard or the Kinesis Advantage Pro keyboard (if you're willing to go to the trouble of re-learning your entire keyboard then you may as well buy a top-of-the-line ergonomic keyboard too).
 
-The full standard keyboard supposedly has 56 characters: 4 rows of 14. In truth it only has 47: 
+The full standard keyboard supposedly has 56 characters: 4 rows of 14. In truth it only has 47:
 
 (m indicates a main-30 key, and k indicates an additional key.)
 
@@ -42,8 +42,8 @@ The full standard keyboard supposedly has 56 characters: 4 rows of 14. In truth 
       m m m m m m m m m m k
       m m m m m m m m m m
 
-The full Kinesis keyboard supposedly has 72 keys: 6 rows of 12. In truth it only has 50: 
- 
+The full Kinesis keyboard supposedly has 72 keys: 6 rows of 12. In truth it only has 50:
+
     k k k k k k k k k k k
     m m m m m m m m m m k
     m m m m m m m m m m k
@@ -80,7 +80,7 @@ FITNESS
 -------
 
 See [Fitness.txt.](/doc/Fitness.md)
- 
+
 
 ADDING YOUR OWN PHYSICAL KEYBOARD
 ---------------------------------
@@ -93,14 +93,14 @@ By default there are three options for physical keyboards: a keyboard with just 
         #define K_STANDARD 1
         #define K_KINESIS 2
         // ...
-    
-Add this line to the end: 
+
+Add this line to the end:
 
         #define K_BINARY 10
 
 It doesn't matter what number you give as long as no other keyboard uses the same number.
 
-2. In tools.c near the bottom there's a function called setksize(). It sets the size of the keyboard. Add your keyboard to the switch statement, like so: 
+2. In tools.c near the bottom there's a function called setksize(). It sets the size of the keyboard. Add your keyboard to the switch statement, like so:
 
         case K_BINARY:
             ksize = 2; /* The size of the keyboard in this case is 2 */
@@ -113,23 +113,23 @@ It doesn't matter what number you give as long as no other keyboard uses the sam
             // determined by looking at how the positions were valued on
             // some of the best alternative layouts.
             long long costsCopy[KSIZE_MAX] = {
-                70,  35,  30,  40,  60,  80,  40,  30,  35,  70, 
-                10,   4,   0,   0,  35,  35,   0,   0,   4,  10, 
-                90,  85,  60,  50,  95,  70,  40,  60,  80,  90, 
+                70,  35,  30,  40,  60,  80,  40,  30,  35,  70,
+                10,   4,   0,   0,  35,  35,   0,   0,   4,  10,
+                90,  85,  60,  50,  95,  70,  40,  60,  80,  90,
             };
             for (i = 0; i < ksize; ++i)
                 distanceCosts[i] = costsCopy[i];
-    
+
         // ...
-            
+
         } else if (full_keyboard == K_STANDARD) {
-            
+
         // ...
 
         } else if (full_keyboard == K_KINESIS) {
-            
+
         // ...
-            
+
         }
 
 Add a new section that looks like this:
@@ -145,7 +145,7 @@ Add a new section that looks like this:
                 distanceCosts[i] = costsCopy[i];
         }
 
-4. In tools.c there's a function called `initKeyboardData()`. It includes all the data for each keyboard, including `fingerCopy`, `rowCopy`, `homeRow`, `handCopy`, `isCenterCopy`, `isOutsideCopy`, `printItCopy`, `indicesCopy`. You'll have to create one of each of these. See tools.h for an explanation of what they each do. (In tools.h the names don't contain the word 'Copy'.) Also add this line in `initKeyboardData()`: 
+4. In tools.c there's a function called `initKeyboardData()`. It includes all the data for each keyboard, including `fingerCopy`, `rowCopy`, `homeRow`, `handCopy`, `isCenterCopy`, `isOutsideCopy`, `printItCopy`, `indicesCopy`. You'll have to create one of each of these. See tools.h for an explanation of what they each do. (In tools.h the names don't contain the word 'Copy'.) Also add this line in `initKeyboardData()`:
 
         strcpy(keysToInclude, DEFAULT_KEYBOARD_BINARY);
 
@@ -158,5 +158,5 @@ Add a new section that looks like this:
     } else if (streqn(cmd, "setksize ", strlen("setksize "))) {
 
 There's a series of if/else statements that check if the user typed in the name of one of the available keyboards. Add your keyboard to the list.
-   
+
 And you're done.

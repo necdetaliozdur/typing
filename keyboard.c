@@ -9,90 +9,90 @@
 #include "keyboard.h"
 
 int legalBox[] = {
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 };
 
 int legalBox2[] = {
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 
-	3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	2, 2, 2, 2, 1, 1, 2, 2, 2, 2,
+	3, 3, 3, 3, 3, 3, 4, 4, 4, 4,
 };
 
 int legalBox3[] = {
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 
-	4, 4, 3, 3, 3, 3, 3, 3, 4, 4, 
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	2, 2, 2, 2, 1, 1, 2, 2, 2, 2,
+	4, 4, 3, 3, 3, 3, 3, 3, 4, 4,
 };
 
 int legalBox4[] = {
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 
-	3, 3, 4, 4, 3, 3, 4, 4, 3, 3, 
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	2, 2, 2, 2, 1, 1, 2, 2, 2, 2,
+	3, 3, 4, 4, 3, 3, 4, 4, 3, 3,
 };
 
 int legalBox5[] = {
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	2, 2, 2, 2, 1, 1, 2, 2, 2, 2,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 };
 
 int bigLegalBox[] = {
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 };
 
 int bigLegalBox1[] = {
-	1, 2, 3, 4, 5, 6, 7, 8, 9,10,11, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 2, 3, 4, 5, 6, 7, 8, 9,10,11, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 };
 
 int bigLegalBox2[] = {
-	1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 };
 
 int bigLegalBoxAtle[] = {
-	1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 };
 
 int bigLegalBoxConsonants[] = {
-	1,12, 3, 4, 5, 6, 7, 8, 9,10,11, 2, 2, 2, 
-	1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 
-	1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 
-	1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+	1,12, 3, 4, 5, 6, 7, 8, 9,10,11, 2, 2, 2,
+	1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2,
+	1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2,
+	1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 };
 
 int kinesisLegalBox[] = {
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 };
 
 int kinesisLegalBox2[] = {
-	1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+	1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 };
 
 void buildShuffledIndices(int indices[], int length)
@@ -109,48 +109,48 @@ void buildShuffledIndices(int indices[], int length)
 int initKeyboard(Keyboard *k)
 {
 	int i;
-	
+
 	copyKeyboard(k, &nilKeyboard);
 	setLayout(k, keysToInclude);
 	for (i = 0; i < FINGER_COUNT; ++i) k->fingerUsage[i] = 0;
-	
+
 	shuffleLayout(k);
-	
+
 	/* If keepNumbers is enabled, move all numbers back to their positions. */
 	if (keepNumbers && ksize > 30) {
 		char c;
 		for (c = '0'; c <= '9'; ++c) {
 			i = locIgnoreShifted(k, c);
 			if (i < 0) continue;
-            
+
             /* + 9 so that 1 will be first and 0 will be last. */
 			int n = (c - '0' + 9) % 10 + firstNumberIndex;
 			swap(k, i, n);
 		}
 	}
-    
+
 	if (keepTab) {
 		int tabLoc = locWithShifted(k, '\t');
 		if (tabLoc >= 0) {
 			int expectedTabLoc = ksize == 72 ? 12 : 14;
 			swap(k, tabLoc, expectedTabLoc);
-		}		
+		}
 	}
-	
+
 	if (keepConsonantsRight && fullKeyboard == K_STANDARD) {
 		const char *consonants = "bcdfghjklmnpqrstvwxyz";
 		/* TODO: Swap both shifted and unshifted */
 		static int halfIndices[] = {
-			11, 12, 
-			20, 21, 22, 23, 24, 25, 26, 27, 
-			34, 35, 36, 37, 38, 39, 
-			48, 49, 50, 51, 52, 
+			11, 12,
+			20, 21, 22, 23, 24, 25, 26, 27,
+			34, 35, 36, 37, 38, 39,
+			48, 49, 50, 51, 52,
 		};
-				
+
 		for (i = 0; i < (long) (sizeof(halfIndices)/sizeof(int)); ++i)
 			swap(k, locIgnoreShifted(k, consonants[i]), halfIndices[i]);
 	}
-	
+
 	k->fitness    = 0;
 	k->distance   = 0;
 	k->inRoll     = 0;
@@ -161,7 +161,7 @@ int initKeyboard(Keyboard *k)
 	k->homeJump   = 0;
 	k->toCenter   = 0;
 	k->toOutside  = 0;
-	
+
 	return 0;
 }
 
@@ -171,34 +171,34 @@ int setLayout(Keyboard *k, char *layout)
 	char *savedLayout = layout;
 	for (i = 0; i < ksize; ++i) {
 		if (printable[i] && *layout == '\0') {
-			fprintf(stderr, "Error: in setLayout(), layout %s does not have enough characters (%d expected, %ld found).\n", 
+			fprintf(stderr, "Error: in setLayout(), layout %s does not have enough characters (%d expected, %ld found).\n",
 					savedLayout, trueksize, strlen(savedLayout));
 			return -1;
 		}
 		if (printable[i]) k->layout[i] = *(layout++);
 		else k->layout[i] = 1; /* 1 is used as a placeholder */
 	}
-	
+
 	savedLayout = layout;
 	for (i = 0; i < ksize; ++i) {
 		if (printable[i] && *layout == '\0') {
-			fprintf(stderr, "Error: in setLayout(), layout %s does not have enough characters (%d expected, %ld found).\n", 
+			fprintf(stderr, "Error: in setLayout(), layout %s does not have enough characters (%d expected, %ld found).\n",
 					savedLayout, trueksize, strlen(savedLayout));
 			return -1;
 		}
 		if (printable[i]) k->shiftedLayout[i] = *(layout++);
 		else k->shiftedLayout[i] = 1;
 	}
-	
+
 	k->layout[i] = '\0';
 	k->shiftedLayout[i] = '\0';
-	
+
 	return 0;
 }
 
-/* 
+/*
  * Copies a layout from file onto k.
- * 
+ *
  * Return Codes
  * -1: Error.
  * -2: No new layout was found in the file.
@@ -208,9 +208,9 @@ int layoutFromFile(FILE *file, Keyboard *k)
 {
 	int i;
 	int prevC = 0, c = 0;
-	
+
 	copyKeyboard(k, &nilKeyboard);
-	
+
 	int readUntilN = FALSE, noNewKeyboard = TRUE, escaped = FALSE;
 	for (i = 0; (c = getc(file)) != EOF && i < 2 * ksize; ++i, prevC = c) {
 		if (readUntilN) {
@@ -224,7 +224,7 @@ int layoutFromFile(FILE *file, Keyboard *k)
 		} else if (!escaped && c == '\\') {
 			escaped = TRUE;
 			--i;
-		} else if (c == '\n') { 
+		} else if (c == '\n') {
 			if (i > 0) {
 				fprintf(stderr, "Error: In layoutFromFile(), keyboard layout is not %d characters.\n", trueksize);
 				copyKeyboard(k, &nilKeyboard);
@@ -238,7 +238,7 @@ int layoutFromFile(FILE *file, Keyboard *k)
 		} else {
 			while (i < 2 * ksize && !printable[i % ksize])
 				++i;
-			
+
 			if (escaped) {
 				escaped = FALSE;
 				char saved = c;
@@ -253,7 +253,7 @@ int layoutFromFile(FILE *file, Keyboard *k)
 					return -1;
 				}
 			}
-						
+
 			if (i < ksize) k->layout[i] = (char) c;
 			else if (i < 2 * ksize) k->shiftedLayout[i - ksize] = (char) c;
 
@@ -262,15 +262,15 @@ int layoutFromFile(FILE *file, Keyboard *k)
 			noNewKeyboard = FALSE;
 		}
 	}
-	
+
 	k->layout[ksize] = '\0';
 	k->shiftedLayout[ksize] = '\0';
 	while (c != EOF && c != '\n') c = fgetc(file);
-		
+
 	if (noNewKeyboard)
 		return -2;
 	calcFitness(k);
-	
+
 	return 0;
 }
 
@@ -279,14 +279,14 @@ inline void copyKeyboard(Keyboard *k, Keyboard *original)
 	memcpy(k, original, sizeof(Keyboard));
 }
 
-/* 
- * If loc1 or loc2 falls on [0, ksize), it swaps an unshifted char. 
- * If it falls on [ksize, 2 * ksize), it swaps a shifted char. 
- * If loc1 or loc2 is a char that has a paired shifted char, this will 
+/*
+ * If loc1 or loc2 falls on [0, ksize), it swaps an unshifted char.
+ * If it falls on [ksize, 2 * ksize), it swaps a shifted char.
+ * If loc1 or loc2 is a char that has a paired shifted char, this will
  * automatically call swapPair().
- * 
+ *
  * WARNING: Can perform illegal swaps.
- * 
+ *
  * Return Codes
  * 0: Success.
  * -1: loc1 or loc2 is out of bounds.
@@ -298,66 +298,66 @@ inline int swap(Keyboard *k, int loc1, int loc2)
         return -1;
 	if (printable[loc1 % ksize] ^ printable[loc2 % ksize])
         return -2;
-	
+
 	if (keepShiftPair(k->layout[loc1 % ksize]) ||
 			 keepShiftPair(k->layout[loc2 % ksize])) {
 		return swapPair(k, loc1, loc2);
 	}
-	
+
 	char *layout1;
 	char *layout2;
-	
+
 	if (loc1 < ksize) {
         layout1 = k->layout;
 	} else {
 		layout1 = k->shiftedLayout;
 		loc1 -= ksize;
 	}
-	
+
 	if (loc2 < ksize) {
         layout2 = k->layout;
     } else {
 		layout2 = k->shiftedLayout;
 		loc2 -= ksize;
 	}
-	
+
 	char temp = layout1[loc1];
 	layout1[loc1] = layout2[loc2];
 	layout2[loc2] = temp;
-			
+
 	return 0;
 }
 
-/* 
+/*
  * Simultaneously swaps two keys' shifted and unshifted values.
  */
 inline int swapPair(Keyboard *k, int loc1, int loc2)
 {
 	if (loc1 < 0 || loc2 < 0 || loc1 >= ksize || loc2 >= ksize) return -1;
 	if (printable[loc1] ^ printable[loc2]) return -2;
-	
+
 	char temp = k->layout[loc1];
 	k->layout[loc1] = k->layout[loc2];
 	k->layout[loc2] = temp;
-	
+
 	temp = k->shiftedLayout[loc1];
 	k->shiftedLayout[loc1] = k->shiftedLayout[loc2];
 	k->shiftedLayout[loc2] = temp;
-	
+
 	return 0;
 }
 
 int qwertyPositions(Keyboard *k)
 {
 	NOT_WORK_WITH_FULL_KEYBOARD("qwertyPositions()");
-	
+
 	int count = 0;
-	
+
 	int i;
 	for (i = 0; i < ksize; ++i)
 		if (k->layout[i] == qwerty[i])
 			count++;
-	
+
 	return count;
 }
 
@@ -371,12 +371,12 @@ int printLayoutOnly(Keyboard *k)
 int printLayoutRaw(char layout[])
 {
 	int i;
-	
+
 	char str[10];
-	
+
 	for (i = 0; i < ksize; ++i) {
 		charToPrintable(str, layout[i], TRUE);
-		
+
 		if (fullKeyboard == K_KINESIS) {
 			if (printable[i]) {
 				if (i % 12 == 11) printf("%s\n", str);
@@ -410,7 +410,7 @@ int printLayoutRaw(char layout[])
 int printPercentages(Keyboard *k)
 {
 	int i;
-	
+
 	/* Calculate fitness so that the keyboard's values will print properly. */
 	calcFitnessDirect(k);
 
@@ -419,9 +419,9 @@ int printPercentages(Keyboard *k)
 
 	// Hand
 	printf("\nHands: ");
-	printf("%lld%% ", 100 * (k->fingerUsage[0] + k->fingerUsage[1] + 
+	printf("%lld%% ", 100 * (k->fingerUsage[0] + k->fingerUsage[1] +
 			k->fingerUsage[2] + k->fingerUsage[3] + k->fingerUsage[4]) / total);
-	printf("%lld%%\n", 100 * (k->fingerUsage[5] + 
+	printf("%lld%%\n", 100 * (k->fingerUsage[5] +
 			k->fingerUsage[6] + k->fingerUsage[7] + k->fingerUsage[8]
 			 + k->fingerUsage[9]) / total);
 
@@ -434,10 +434,10 @@ int printPercentages(Keyboard *k)
 		else printf("%.0f%% ", usage);
 	}
 	printf("\n\n");
-	
+
 	// Print the keyboard layout.
 	printLayoutOnly(k);
-		
+
 	// Print all the fitness criteria.
 	printf("Fitness:       %lld\n",   k->fitness);
 	if (keepQWERTY) printf("QWERTY positions: %d\n", qwertyPositions(k));
@@ -457,8 +457,8 @@ int printPercentages(Keyboard *k)
 	return 0;
 }
 
-/* Assumes buffer is at least 3 characters. 
- * 
+/* Assumes buffer is at least 3 characters.
+ *
  * Converts ' ' to "SP" if changeSpace is true.
  */
 int charToPrintable(char *buffer, char c, int changeSpace)
@@ -482,27 +482,27 @@ int isLegalSwap(Keyboard *k, int i, int j)
 {
 	if (i < 0 || j < 0 || i >= 2 * ksize || j >= 2 * ksize)
 		return FALSE;
-	
+
 	if (!printable[i % ksize] || !printable[j % ksize])
 		return FALSE;
-	
-	if ((i >= ksize && (keepShiftPairs || keepShiftPair(k->shiftedLayout[i % ksize]))) || 
+
+	if ((i >= ksize && (keepShiftPairs || keepShiftPair(k->shiftedLayout[i % ksize]))) ||
 			(j >= ksize && (keepShiftPairs || keepShiftPair(k->shiftedLayout[j % ksize])))) {
 		return FALSE;
 	}
-	
+
 	if (keepNumbers == 1 && (isdigit(charAt(k, i)) || isdigit(charAt(k, j)))) {
 		return FALSE;
 	} else if (keepNumbers == 2 && (isdigit(charAt(k, i)) ^ isdigit(charAt(k, j)))) {
 		return FALSE;
 	}
-	
+
 	if (keepTab && (charAt(k, i) == '\t' || charAt(k, j) == '\t'))
 		return FALSE;
-		
+
 	i %= ksize;
 	j %= ksize;
-	
+
 	if (fullKeyboard == K_NO) {
 		return legalBox[i] == legalBox[j];
 	} else if (fullKeyboard == K_STANDARD) {
@@ -519,25 +519,25 @@ inline void shuffleLayout(Keyboard *k)
 {
 	int x, n = 2 * ksize;
 	int i, legalSwapExists;
-	while (n > 1) 
+	while (n > 1)
 	{
 		--n;
 		while (!printable[n]) --n;
-				
+
 		legalSwapExists = FALSE;
 		for (i = 0; i < n; ++i)
 			if (isLegalSwap(k, i, n)) {
 				legalSwapExists = TRUE;
 				break;
 			}
-		
+
 		if (legalSwapExists) {
 			do {
 				x = rand() % (n + 1);
 			} while (!isLegalSwap(k, x, n));
 
 			swap(k, x, n);
-		}		
+		}
 	}
 }
 
@@ -545,24 +545,23 @@ inline int locIgnoreShifted(Keyboard *k, char c)
 {
 	char *ptr = strchr(k->layout, c);
     if (ptr) return (int) (ptr - k->layout);
-    
+
     ptr = strchr(k->shiftedLayout, c);
     if (ptr) return (int) (ptr - k->shiftedLayout);
-	
+
 	return -1;
 }
 
-/* Guaranteed to check unshifted first, so if a character is the same on both 
+/* Guaranteed to check unshifted first, so if a character is the same on both
  * shifted and unshifted layouts, it will return unshifted first.
  */
 inline int locWithShifted(Keyboard *k, char c)
 {
 	char *ptr = strchr(k->layout, c);
     if (ptr) return (int) (ptr - k->layout);
-    
+
     ptr = strchr(k->shiftedLayout, c);
     if (ptr) return (int) (ptr - k->shiftedLayout) + ksize;
-	
-	return -1;	
-}
 
+	return -1;
+}

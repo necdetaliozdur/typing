@@ -24,7 +24,7 @@
 #ifdef SYS_TIME_H
 #include <sys/time.h>
 #endif
- 
+
 #define K_NO 0
 #define K_STANDARD 1
 #define K_KINESIS 2
@@ -49,7 +49,7 @@ char *kbdFilename;
 		return -1; \
 	}
 
-/* If TRUE, scoreDigraph() uses allDigraphCosts to calculate costs. Otherwise, 
+/* If TRUE, scoreDigraph() uses allDigraphCosts to calculate costs. Otherwise,
  * calculates costs by calling calcX functions.
  */
 #define USE_COST_ARRAY TRUE
@@ -67,7 +67,7 @@ char *kbdFilename;
 
 /* Constants for greatToBest(). */
 #define GTB_ROUNDS 4                    /* recommended 4-64 */
-#define GTB_ROUNDS_MULTIPLIER 2         /* recommended 1.0-2.0 */  
+#define GTB_ROUNDS_MULTIPLIER 2         /* recommended 1.0-2.0 */
 #define RUNS_BEFORE_GTB_ROUNDS_INC 4    /* recommended 4-64 */
 #define GTB_NUMBER_OF_SWAPS 10          /* recommended 10-16 */
 #define GTB_ROUNDS_BEFORE_SWAP_INC 32   /* recommended ~64 */
@@ -82,23 +82,23 @@ int64_t fingerWorkCosts[FINGER_COUNT];
 
 int detailedOutput, numThreads;
 
-/* 0 for false, 1 for true. 
+/* 0 for false, 1 for true.
  * keepNumbers: 2 if numbers can move about but must stay in number row.
- * 
- * Some of these variables require that their condition be true, and others 
+ *
+ * Some of these variables require that their condition be true, and others
  * merely provide a penalty for not doing so.
  * The Former: keepNumbers, keepShiftPairs, keepTab
  * The Latter: keepZXCV, keepBrackets, keepNumbersShifted
  */
-int keepZXCV, keepQWERTY, keepNumbers, keepBrackets, keepShiftPairs, 
-	keepTab, keepConsonantsRight, 
+int keepZXCV, keepQWERTY, keepNumbers, keepBrackets, keepShiftPairs,
+	keepTab, keepConsonantsRight,
 	keepNumbersShifted /* for bogboar */;
-int zCost, xCost, cCost, vCost, qwertyPosCost, qwertyFingerCost, qwertyHandCost, 
+int zCost, xCost, cCost, vCost, qwertyPosCost, qwertyFingerCost, qwertyHandCost,
 	bracketsCost, numbersShiftedCost;
 
-int distance, inRoll, outRoll, sameHand, sameFingerP, sameFingerR, sameFingerM, 
-	sameFingerI, sameFingerT, rowChangeDown, rowChangeUp, handWarp, handSmooth, 
-	homeJump, homeJumpIndex, doubleJump, ringJump, toCenter, toOutside, 
+int distance, inRoll, outRoll, sameHand, sameFingerP, sameFingerR, sameFingerM,
+	sameFingerI, sameFingerT, rowChangeDown, rowChangeUp, handWarp, handSmooth,
+	homeJump, homeJumpIndex, doubleJump, ringJump, toCenter, toOutside,
 	shiftCost, doubleShiftCost;
 
 int initValues();
