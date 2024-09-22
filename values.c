@@ -79,7 +79,6 @@ void initCosts()
     /* If you do not wish to use multithreading, set numThreads to 1. */
 	numThreads = 1;
 
-	keepQWERTY = FALSE;
 	keepNumbers = 1;
 	keepBrackets = TRUE;
 	keepShiftPairs = FALSE;
@@ -87,9 +86,6 @@ void initCosts()
 	keepConsonantsRight = FALSE;
 	keepNumbersShifted = FALSE;
 
-	qwertyPosCost = 14;
-	qwertyFingerCost = 4;
-	qwertyHandCost = 20;
 	bracketsCost = 5000000;
 	numbersShiftedCost = -1000000;
 

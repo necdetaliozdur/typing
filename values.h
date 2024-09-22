@@ -89,11 +89,10 @@ int detailedOutput, numThreads;
  * The Former: keepNumbers, keepShiftPairs, keepTab
  * The Latter: keepZXCV, keepBrackets, keepNumbersShifted
  */
-int keepQWERTY, keepNumbers, keepBrackets, keepShiftPairs,
+int keepNumbers, keepBrackets, keepShiftPairs,
 	keepTab, keepConsonantsRight,
 	keepNumbersShifted /* for bogboar */;
-int qwertyPosCost, qwertyFingerCost, qwertyHandCost,
-	bracketsCost, numbersShiftedCost;
+int bracketsCost, numbersShiftedCost;
 
 int distance, inRoll, outRoll, sameHand, sameFingerP, sameFingerR, sameFingerM,
 	sameFingerI, sameFingerT, rowChangeDown, rowChangeUp, handWarp, handSmooth,

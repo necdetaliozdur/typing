@@ -440,7 +440,6 @@ int printPercentages(Keyboard *k)
 
 	// Print all the fitness criteria.
 	printf("Fitness:       %lld\n",   k->fitness);
-	if (keepQWERTY) printf("QWERTY positions: %d\n", qwertyPositions(k));
 	printf("Distance:      %lld\n",   (        (    k->distance  )           ));
 	printf("Finger work:   %lld\n",   (        (    k->fingerWork)           ));
 	printf("Inward rolls:  %.2f%%\n", ((double)(100*k->inRoll    ) / totalDi ));

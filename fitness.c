@@ -147,7 +147,6 @@ int calcFitness(Keyboard *k)
     k->fitness += k->distance + k->fingerWork + k->inRoll + k->outRoll +
         k->sameHand + k->sameFinger + k->rowChange + k->homeJump +
         k->ringJump + k->toCenter + k->toOutside;
-	if (keepQWERTY) k->fitness += calcQWERTY(k);
 	if (keepBrackets) k->fitness += calcBrackets(k);
 	if (keepNumbersShifted) k->fitness += calcNumbersShifted(k);
 
@@ -195,22 +194,6 @@ inline int scoreDigraph(Keyboard *k, char digraph[], int64_t multiplier,
 
 	return 0;
 #endif
-}
-
-inline int64_t calcQWERTY(Keyboard *k)
-{
-	NOT_WORK_WITH_FULL_KEYBOARD("calcQWERTY")
-	int64_t result = 0;
-	int64_t averageMon = totalMon / 30;
-
-	int i, pos;
-	for (i = 0; i < 30; ++i) {
-		if ((pos = locIgnoreShifted(k, qwerty[i])) != i) result += qwertyPosCost * averageMon;
-		if (finger[pos] != finger[i]) result += qwertyFingerCost * averageMon;
-		if (hand[pos] != hand[i]) result += qwertyHandCost * averageMon;
-	}
-
-	return result;
 }
 
 inline int64_t calcBrackets(Keyboard *k)

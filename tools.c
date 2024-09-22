@@ -615,7 +615,6 @@ void initVariables()
     ++variablesLength;
 
     ADD_VAR(detailedOutput, "(bool) provide additional information while running the algorithm");
-    ADD_VAR(keepQWERTY, "(bool) try to keep keys in their QWERTY positions");
     ADD_VAR(keepNumbers, "(bool) keep numbers in place");
     ADD_VAR(keepBrackets, "(bool) keep brackets symmetrical");
     ADD_VAR(keepShiftPairs, "(bool) shifted/unshifted pairs of non-alphabetic characters stay together");
